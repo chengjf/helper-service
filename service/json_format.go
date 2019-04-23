@@ -8,6 +8,10 @@ import (
 
 var x = "hello"
 
+type Input struct {
+    Input      string     `json:"input"`
+}
+
 func FormatJson(ctx iris.Context) {
 
 	// str := `{
@@ -18,13 +22,17 @@ func FormatJson(ctx iris.Context) {
 	// 	"array": ["foo", "bar", "baz"],
 	// 	"obj": { "a": 1, "b": 2 }
 	//   }`
-	  str := ctx.FormValueDefault("input", "{}")
-	  in := []byte(str)
-	  var raw map[string]interface{}
-	  json.Unmarshal(in, &raw)
-	  out, _ := json.MarshalIndent(raw,"","    ")
-	  result := string(out);
-	  ctx.JSON(iris.Map{
-		"message": result,
-	})
+	var input Input
+	if err := ctx.ReadJSON(&input); err != nil {
+		// Handle error.
+	}
+	str := input.Input
+	in := []byte(str)
+	var raw map[string]interface{}
+	json.Unmarshal(in, &raw)
+	out, _ := json.MarshalIndent(raw,"","    ")
+	result := string(out);
+	ctx.JSON(iris.Map{
+	"message": result,
+})
 }
