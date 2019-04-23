@@ -10,14 +10,15 @@ var x = "hello"
 
 func FormatJson(ctx iris.Context) {
 
-	str := `{
-		"str": "foo",
-		"num": 100,
-		"bool": false,
-		"null": null,
-		"array": ["foo", "bar", "baz"],
-		"obj": { "a": 1, "b": 2 }
-	  }`
+	// str := `{
+	// 	"str": "foo",
+	// 	"num": 100,
+	// 	"bool": false,
+	// 	"null": null,
+	// 	"array": ["foo", "bar", "baz"],
+	// 	"obj": { "a": 1, "b": 2 }
+	//   }`
+	  str := ctx.FormValueDefault("input", "{}")
 	  in := []byte(str)
 	  var raw map[string]interface{}
 	  json.Unmarshal(in, &raw)
