@@ -15,7 +15,7 @@ require (
 	github.com/iris-contrib/go.uuid v2.0.0+incompatible // indirect
 	github.com/json-iterator/go v1.1.6 // indirect
 	github.com/kataras/golog v0.0.0-20180321173939-03be10146386 // indirect
-	github.com/kataras/iris v11.1.1+incompatible // indirect
+	github.com/kataras/iris v11.1.1+incompatible
 	github.com/kataras/pio v0.0.0-20190103105442-ea782b38602d // indirect
 	github.com/klauspost/compress v1.4.1 // indirect
 	github.com/klauspost/cpuid v1.2.1 // indirect
