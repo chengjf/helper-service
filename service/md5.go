@@ -44,6 +44,7 @@ func Md5(ctx iris.Context) {
 
 	}
 	fmt.Printf("last data: %+v\n", data)
+	result := hex.EncodeToString(data[:])
 	ctx.JSON(iris.Map{
 		"result": result,
 	})
