@@ -12,7 +12,7 @@ func main() {
 	app.Post("/api/md5", service.Md5)
 	
 	// add pprof
-	app.Any("/debug/pprof/{action:path}", pprof.New())
+	app.Any("/api/debug/pprof/{action:path}", pprof.New())
 
 	// listen and serve on http://0.0.0.0:8080.
 	app.Run(iris.Addr("127.0.0.1:8080"))
