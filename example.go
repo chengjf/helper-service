@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/chengjf/helper-service/service"
 	"github.com/kataras/iris"
+	"github.com/kataras/iris/middleware/pprof"
 )
 
 func main() {
